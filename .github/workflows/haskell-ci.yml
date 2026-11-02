@@ -119,9 +119,9 @@ jobs:
 
     - name: Build
       run: |
-          cabal build --enable-tests --disable-optimization -fexecutable --ghc-option=-Werror
+          cabal build --enable-tests --disable-optimization --ghc-option=-Werror ${{ inputs.cabalopts }}
 
     - name: Test
       run: |
-          cabal test --disable-optimization --ghc-option=-Werror
+          cabal test --disable-optimization --ghc-option=-Werror ${{ inputs.cabalopts }}
 
