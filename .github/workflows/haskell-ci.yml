@@ -2,6 +2,10 @@ name: CI tests
 
 on:
   workflow_call:
+    inputs:
+      cabalopts:
+        type: string
+        required: false
 
 jobs:
   linux:
@@ -13,19 +17,19 @@ jobs:
         versions:
           - ghc: '9.6'
             cabal: 'latest'
-            cabalopts: '--ghc-option=-Werror'
+            cabalopts: '--ghc-option=-Werror ${{ inputs.cabalopts }}'
           - ghc: '9.8'
             cabal: 'latest'
-            cabalopts: '--ghc-option=-Werror'
+            cabalopts: '--ghc-option=-Werror ${{ inputs.cabalopts }}'
           - ghc: '9.10'
             cabal: 'latest'
-            cabalopts: '--ghc-option=-Werror'
+            cabalopts: '--ghc-option=-Werror ${{ inputs.cabalopts }}'
           - ghc: '9.12'
             cabal: 'latest'
-            cabalopts: '--ghc-option=-Werror'
+            cabalopts: '--ghc-option=-Werror ${{ inputs.cabalopts }}'
           - ghc: '9.14'
             cabal: 'latest'
-            cabalopts: '--ghc-option=-Werror'
+            cabalopts: '--ghc-option=-Werror ${{ inputs.cabalopts }}'
 
     steps:
     - uses: actions/checkout@v7

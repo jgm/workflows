@@ -18,4 +18,6 @@ on:
 jobs:
   ci:
     uses: jgm/workflows/.github/workflows/haskell-ci.yml@main
+    with:
+      cabalopts: '-fexecutable'
 ```
