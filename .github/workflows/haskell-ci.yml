@@ -80,7 +80,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-ghc-${{ matrix.versions.ghc }}-cabal-${{ secrets.CACHE_VERSION }}-
 
-    - name: Build and test
+    - name: Build
       run: |
           cabal build --enable-tests --disable-optimization -fexecutable ${{ matrix.versions.cabalopts }} all
 
