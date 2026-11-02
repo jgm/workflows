@@ -1,0 +1,7 @@
+{
+  "name": "Haskell CI Pipeline",
+  "description": "Standard CI pipeline for Haskell applications",
+  "iconName": "haskell",
+  "categories": ["Haskell", "CI"],
+  "filePatterns": ["*.cabal"]
+}
